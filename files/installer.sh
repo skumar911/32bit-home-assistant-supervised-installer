@@ -35,6 +35,7 @@ FILE_NM_CONNECTION="/etc/NetworkManager/system-connections/default"
 
 URL_RAW_BASE="https://raw.githubusercontent.com/skumar911/32bit-home-assistant-supervised-installer/main/files"
 URL_VERSION="https://version.home-assistant.io/stable.json"
+URL_VERSION="docker pull homeassistant/i386-hassio-supervisor:2023.06.3"
 URL_BIN_APPARMOR="${URL_RAW_BASE}/usr/sbin/hassio-apparmor"
 URL_BIN_HASSIO="${URL_RAW_BASE}/usr/sbin/hassio-supervisor"
 URL_DOCKER_DAEMON="${URL_RAW_BASE}/etc/docker/daemon.json"
@@ -203,8 +204,10 @@ fi
 if [ ! -d "${PREFIX}/bin" ]; then
     mkdir -p "${PREFIX}/bin"
 fi
+
 # Read infos from web
-HASSIO_VERSION=$(curl -s $URL_VERSION | jq -e -r '.supervisor')
+#HASSIO_VERSION=$(curl -s $URL_VERSION | jq -e -r '.supervisor')
+HASSIO_VERSION="i386-hassio-supervisor:2023.06.3"
 
 ##
 # Write configuration
