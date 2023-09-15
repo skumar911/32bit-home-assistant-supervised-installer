@@ -207,7 +207,7 @@ fi
 
 # Read infos from web
 #HASSIO_VERSION=$(curl -s $URL_VERSION | jq -e -r '.supervisor')
-HASSIO_VERSION="i386-hassio-supervisor:2023.06.3"
+HASSIO_VERSION="2023.06.3"
 
 ##
 # Write configuration
