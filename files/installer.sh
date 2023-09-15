@@ -112,11 +112,12 @@ if [[ "$answer" =~ "y" ]] || [[ "$answer" =~ "Y" ]]; then
     curl -sL "${URL_INTERFACES}" > "${FILE_INTERFACES}";
 fi
 
-info "Restarting NetworkManager"
-systemctl restart "${SERVICE_NM}"
+#Skipping for now
+#info "Restarting NetworkManager"
+#systemctl restart "${SERVICE_NM}"
 
-info "Sleeping for 15"
-sleep 15
+#info "Sleeping for 15"
+#sleep 15
 
 # Parse command line parameters
 while [[ $# -gt 0 ]]; do
@@ -221,6 +222,7 @@ info "Install supervisor Docker container"
 docker pull "$HASSIO_DOCKER:$HASSIO_VERSION" > /dev/null
 docker tag "$HASSIO_DOCKER:$HASSIO_VERSION" "$HASSIO_DOCKER:latest" > /dev/null
 
+info "Reached here"
 ##
 # Install Hass.io Supervisor
 info "Install supervisor startup scripts"
