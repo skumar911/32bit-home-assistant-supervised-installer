@@ -115,6 +115,9 @@ fi
 info "Restarting NetworkManager"
 systemctl restart "${SERVICE_NM}"
 
+info "Sleeping for 15"
+sleep 15
+
 # Parse command line parameters
 while [[ $# -gt 0 ]]; do
     arg="$1"
